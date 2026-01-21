@@ -1116,6 +1116,8 @@
     17. Parent-child communication
         - @Input() : used to share data from parent to child
         - @Output() : used to share events from child to parent
+    18. Angular pipes : Angular template expressions that allows you to transform data , Angular pipes use the vertical bar character (|)
+        - Built-in Pipes : 
 
 
 
