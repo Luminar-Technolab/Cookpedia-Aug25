@@ -12,4 +12,10 @@ export class ApiService {
   getAllRecipesAPI(){
     return this.http.get(`${this.server_url}/recipes`)
   }
+
+  //register - called by register when register btn clicked
+  registerAPI(user:any){
+    return this.http.post(`${this.server_url}/register`,user)
+  }
+
 }

@@ -1118,6 +1118,16 @@
         - @Output() : used to share events from child to parent
     18. Angular pipes : Angular template expressions that allows you to transform data , Angular pipes use the vertical bar character (|)
         - Built-in Pipes : 
+        - Custom pipes : ng g p pipe-folder/pipe-name
+    19. Angular Forms :
+        - Template driven forms : 
+            - Import FormsModule
+        - Model Driven forms : Reactive forms it has 3 parts
+            - Import ReactiveFormsModule
+            - Form consist of 3 parts, Inject FormBuilder class
+                - form group 
+                - form Array
+                - form control name
 
 
 
