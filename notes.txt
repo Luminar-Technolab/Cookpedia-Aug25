@@ -1061,6 +1061,7 @@
         - use router-outlet in app.html file : When the route changes, Angular loads the corresponding component inside <router-outlet> without reloading the page
         - routerLink attribute used to redirect from one page to another without reloading the current page
         - use Router class to redirect from one component to another using its navigateByUrl()
+        - ActivatedRoute class : Provides access to information about a route associated with a component 
     9. Data binding : used to share data between component (ts file) to view (html file)
         - One way binding : data shares in one direction only
             1. Interpolation : {{class-property}}

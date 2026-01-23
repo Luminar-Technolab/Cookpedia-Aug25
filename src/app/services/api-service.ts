@@ -18,4 +18,14 @@ export class ApiService {
     return this.http.post(`${this.server_url}/register`,user)
   }
 
+  //login - called by login when login btn clicked
+  loginAPI(user:any){
+    return this.http.post(`${this.server_url}/login`,user)
+  }
+
+  //view recipes
+  viewRecipeAPI(recipeId:string){
+    return this.http.get(`${this.server_url}/recipes/${recipeId}`)
+  }
+  
 }
