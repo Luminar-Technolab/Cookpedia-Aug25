@@ -54,5 +54,10 @@ export class ApiService {
   getUserSavedRecipesAPI(){
     return this.http.get(`${this.server_url}/save-recipes`,this.appendToken())
   }
+
+  ///save-recipes/:id : delete by save recipe when delelte btn clicked
+  removeUserSavedRecipeItemAPI(id:string){
+    return this.http.delete(`${this.server_url}/save-recipes/${id}`,this.appendToken())
+  }
   
 }
