@@ -59,5 +59,10 @@ export class ApiService {
   removeUserSavedRecipeItemAPI(id:string){
     return this.http.delete(`${this.server_url}/save-recipes/${id}`,this.appendToken())
   }
+
+  //http://localhost:3000/feedbacks : post by contact when submit clicked
+  addFeedbackAPI(reqBody:any){
+    return this.http.post(`${this.server_url}/feedbacks`,reqBody)
+  }
   
 }
