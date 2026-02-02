@@ -12,11 +12,13 @@ import { ApiService } from '../services/api-service';
 })
 export class Home {
 
+  allFeedbacks:any = signal([])
   allRecipes:any = signal([])
   api = inject(ApiService)
 
   ngOnInit(){
     this.getHomeRecipes()
+    this.getApproveFeedacks()
   }
 
   getHomeRecipes(){
@@ -24,6 +26,12 @@ export class Home {
       const homeRecipes = res.slice(0,6)
       this.allRecipes.set(homeRecipes)
       console.log(this.allRecipes());
+    })
+  }
+
+  getApproveFeedacks(){
+    this.api.getApproveFeedbacksAPI().subscribe((res:any)=>{
+      this.allFeedbacks.set(res)
     })
   }
 }

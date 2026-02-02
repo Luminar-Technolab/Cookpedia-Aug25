@@ -64,5 +64,19 @@ export class ApiService {
   addFeedbackAPI(reqBody:any){
     return this.http.post(`${this.server_url}/feedbacks`,reqBody)
   }
+
+  //approve-feedbacks : get request by home component when page load
+  getApproveFeedbacksAPI(){
+    return this.http.get(`${this.server_url}/approve-feedbacks`)
+  }
+
+  //http://localhost:3000/users/6971e82f66fdc47147721f3c put reqst by profile compoenent when picture upload
+  updateUserProfileAPI(id:string,reqBody:any){
+    return this.http.put(`${this.server_url}/users/${id}`,reqBody,this.appendToken())
+  }
+  //http://localhost:3000/user-downloads get rqst by profile whwn page loads
+  getUserDownloadAPI(){
+    return this.http.get(`${this.server_url}/user-downloads`,this.appendToken())
+  }
   
 }

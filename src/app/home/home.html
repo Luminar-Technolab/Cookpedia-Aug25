@@ -64,11 +64,13 @@
        <div class="my-5 text-center">
         <h1>Client Testimonials</h1>
         <div class="scroll-text my-5 d-flex">
-            <!-- feedbacks tobe duplicated -->
-            <div class="border p-3 shadow rounded me-2 w-25 text-wrap">
-                <h5>cleint</h5>
-                <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, quibusdam reiciendis consequatur commodi totam sit.</p>
-            </div>
+            <!-- feedbacks to be duplicated -->
+            @for (item of allFeedbacks(); track $index) {
+                <div class="border p-3 shadow rounded me-2 w-25 text-wrap">
+                    <h5>{{item.name}}</h5>
+                    <p style="text-align: justify;">{{item.message}}</p>
+                </div>
+            }
         </div>
        </div>
 </div>
