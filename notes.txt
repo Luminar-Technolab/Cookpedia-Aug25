@@ -1129,6 +1129,12 @@
                 - form group 
                 - form Array
                 - form control name
+    20. Modules in Angular : used to group a collection of component in angular
+        - create module with routing : ng g m module-name --routing
+        - Module Lazy loading : used to load component when user request
+            - steps to lazy load a module
+                1. define path for component of lazy loaded module in app.routes.ts file
+        - Component in module : ng g c module-name/component-name --no-standalone
 
 
 

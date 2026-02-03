@@ -10,7 +10,12 @@ import { SaveRecipe } from './save-recipe/save-recipe';
 import { ViewRecipe } from './view-recipe/view-recipe';
 import { Pnf } from './pnf/pnf';
 
+
 export const routes: Routes = [
+    //lazyloaded - http://localhost:4200/admin
+    {
+        path:'admin', loadChildren:()=>import('./admin/admin-module').then(module=>module.AdminModule)
+    },
     // home
     {
         path:'', component:Home, title:'Home'
