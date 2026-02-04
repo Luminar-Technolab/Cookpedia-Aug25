@@ -16,13 +16,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>573208534853</td>
-                        <td>name</td>
-                        <td>cuisine</td>
-                        <td>count</td>
-                    </tr>
+                   @for (item of downloadList(); track $index;let i = $index) {
+                        <tr>
+                            <td>{{i+1}}</td>
+                            <td>{{item.recipeId}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.cuisine}}</td>
+                            <td>{{item.count}}</td>
+                        </tr>
+                   }
                 </tbody>
             </table>
         </div>

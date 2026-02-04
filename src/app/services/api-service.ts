@@ -78,5 +78,27 @@ export class ApiService {
   getUserDownloadAPI(){
     return this.http.get(`${this.server_url}/user-downloads`,this.appendToken())
   }
-  
+  //http://localhost:3000/downloads : get by admin download list 
+  getAllDownloadAPI(){
+    return this.http.get(`${this.server_url}/downloads`,this.appendToken())
+  }
+
+  //http://localhost:3000/users get rqst user compoenent
+  getAllUsersAPI(){
+    return this.http.get(`${this.server_url}/users`,this.appendToken())
+  }
+  //http://localhost:3000/feedbacks : get
+  getAllFeedbacksAPI(){
+    return this.http.get(`${this.server_url}/feedbacks`,this.appendToken())
+  }
+  //http://localhost:3000/feedbacks/697c706d55cd9b6d23acfeb5 : put
+  updateFeedbackAPI(id:string,reqBody:any){
+    return this.http.put(`${this.server_url}/feedbacks/${id}`,reqBody,this.appendToken())
+  }
+
+  //http://localhost:3000/recipes post
+  addRecipeAPI(reqBody:any){
+    return this.http.post(`${this.server_url}/recipes`,reqBody,this.appendToken())
+  }
+
 }

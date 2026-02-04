@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-manage-recipe',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class ManageRecipe {
 
+  route = inject(ActivatedRoute)
+  recipeId = this.route.snapshot.params['id']
+  
 }
