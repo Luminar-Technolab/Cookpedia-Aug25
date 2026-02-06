@@ -106,4 +106,9 @@ export class ApiService {
   editRecipeAPI(recipeId:string,reqBody:RecipeModel){
     return this.http.put(`${this.server_url}/recipes/${recipeId}`,reqBody,this.appendToken())
   }
+  //http://localhost:3000/recipes/69830f142cf03bb23bfe4504 : delete rqst by 
+  deleteRecipeAPI(recipeId:string){
+    return this.http.delete(`${this.server_url}/recipes/${recipeId}`,this.appendToken())
+  }
+
 }
