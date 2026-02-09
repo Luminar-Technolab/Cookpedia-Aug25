@@ -1135,7 +1135,16 @@
             - steps to lazy load a module
                 1. define path for component of lazy loaded module in app.routes.ts file
         - Component in module : ng g c module-name/component-name --no-standalone
-
+    21. Route Guarding in Angular :  is used to control access to routes based on conditions like authentication, authorization, or unsaved changes. It’s essential for apps with login systems, admin panels, or protected pages.
+        - Create route guaurd : ng g g guards-folder/guard-name
+        - Types of Route Guards in Angular
+            | Guard                | Purpose                         |
+            | -------------------- | ------------------------------- |
+            | `CanActivate`        | Allow or deny access to a route |
+            | `CanActivateChild`   | Guard child routes              |
+            | `CanDeactivate`      | Prevent leaving a route         |
+            | `Resolve`            | Fetch data before route loads   |
+            | `CanLoad` *(legacy)* | Prevent lazy module loading     |
 
 
 

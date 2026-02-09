@@ -9,12 +9,14 @@ import { Profile } from './profile/profile';
 import { SaveRecipe } from './save-recipe/save-recipe';
 import { ViewRecipe } from './view-recipe/view-recipe';
 import { Pnf } from './pnf/pnf';
+import { authGuard } from './gaurds/auth-guard';
+import { adminAuthGuard } from './gaurds/admin-auth-guard';
 
 
 export const routes: Routes = [
     //lazyloaded - http://localhost:4200/admin
     {
-        path:'admin', loadChildren:()=>import('./admin/admin-module').then(module=>module.AdminModule)
+        path:'admin', canActivate:[adminAuthGuard], loadChildren:()=>import('./admin/admin-module').then(module=>module.AdminModule)
     },
     // home
     {
@@ -36,13 +38,13 @@ export const routes: Routes = [
         path:'register', component:Register, title:'Register'
     },
     {
-        path:'profile', component:Profile, title:'Profile'
+        path:'profile',canActivate:[authGuard], component:Profile, title:'Profile'
     },
     {
-        path:'recipe/save', component:SaveRecipe, title:'Recipe Collection'
+        path:'recipe/save',canActivate:[authGuard], component:SaveRecipe, title:'Recipe Collection'
     },
     {
-        path:'recipes/:id/view', component:ViewRecipe, title:'View Recipe'
+        path:'recipes/:id/view',canActivate:[authGuard], component:ViewRecipe, title:'View Recipe'
     },
     {
         path:'**', component:Pnf, title:'Page Not Found'
